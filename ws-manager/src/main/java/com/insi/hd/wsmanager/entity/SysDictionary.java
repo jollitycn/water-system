@@ -1,6 +1,9 @@
 package com.insi.hd.wsmanager.entity;
 
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -23,6 +26,7 @@ public class SysDictionary implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "dictionary_Id", type = IdType.ID_WORKER)
     @ApiModelProperty(value = "数字字典id")
     private Long dictionaryId;
 
@@ -37,6 +41,9 @@ public class SysDictionary implements Serializable {
 
     @ApiModelProperty(value = "数据名称/数据值")
     private String dataValue;
+
+    @ApiModelProperty(value = "数据英文名称")
+    private String dataEnglishValue;
 
     @ApiModelProperty(value = "数据说明")
     private String dataDesc;

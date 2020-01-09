@@ -7,7 +7,7 @@ spring:
     active: prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://100.168.1.232:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://100.168.1.232:3306/water_system?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password: 123456
 
