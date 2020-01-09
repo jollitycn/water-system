@@ -51,7 +51,7 @@ public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
             .select()
             .apis(RequestHandlerSelectors.basePackage("com.insi.hd.wsmanager.controller"))
-            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+//            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
             .paths(PathSelectors.any())
             .build()
             .apiInfo(apiInfo1())
