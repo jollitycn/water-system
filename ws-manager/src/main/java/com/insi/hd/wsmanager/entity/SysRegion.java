@@ -1,6 +1,9 @@
 package com.insi.hd.wsmanager.entity;
 
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -23,6 +26,7 @@ public class SysRegion implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "region_id", type = IdType.ID_WORKER)
     @ApiModelProperty(value = "地区ID")
     private Long regionId;
 
