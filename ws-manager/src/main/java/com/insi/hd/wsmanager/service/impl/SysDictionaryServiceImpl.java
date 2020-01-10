@@ -28,6 +28,7 @@ public class SysDictionaryServiceImpl extends ServiceImpl<SysDictionaryMapper, S
         if (count > 0) {
             return JSONResult.errorMsg("该数据字典有子数据，无法删除");
         } else {
+            wrapper = new QueryWrapper<>();
             wrapper.eq("dictionary_id", dictionaryId);
             SysDictionary sysDictionary = getOne(wrapper);
             sysDictionary.setIsDeleted(1);
