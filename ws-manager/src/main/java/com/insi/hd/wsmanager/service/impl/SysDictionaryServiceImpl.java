@@ -1,6 +1,7 @@
 package com.insi.hd.wsmanager.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.insi.da.wscommon.constant.Constant;
 import com.insi.da.wscommon.util.JSONResult;
 import com.insi.hd.wsmanager.entity.SysDictionary;
 import com.insi.hd.wsmanager.mapper.SysDictionaryMapper;
@@ -31,7 +32,7 @@ public class SysDictionaryServiceImpl extends ServiceImpl<SysDictionaryMapper, S
             wrapper = new QueryWrapper<>();
             wrapper.eq("dictionary_id", dictionaryId);
             SysDictionary sysDictionary = getOne(wrapper);
-            sysDictionary.setIsDeleted(1);
+            sysDictionary.setIsDeleted(Constant.SYS_ONE);
             boolean status = updateById(sysDictionary);
             if (status) {
                 return JSONResult.ok();
