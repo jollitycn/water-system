@@ -41,10 +41,10 @@ public class SysRoleController {
     @ApiOperation("新增角色")
     public JSONResult add(@RequestBody SysRole data) {
         QueryWrapper<SysRole> wrapper = new QueryWrapper<>();
-        wrapper.eq("role_name", data.getSysRoleName());
+        wrapper.eq("role_name", data.getRoleName());
         int count = sysRoleService.count(wrapper);
         if (count > 0) {
-            return JSONResult.errorMsg("数据编码不能重复");
+            return JSONResult.errorMsg("角色名称不能重复");
         }
         boolean status = sysRoleService.save(data);
         if (status) {
