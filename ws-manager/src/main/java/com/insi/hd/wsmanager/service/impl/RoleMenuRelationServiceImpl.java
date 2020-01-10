@@ -2,8 +2,8 @@ package com.insi.hd.wsmanager.service.impl;
 
 import com.insi.hd.wsmanager.entity.RoleMenuRelation;
 import com.insi.hd.wsmanager.mapper.RoleMenuRelationMapper;
-import com.insi.hd.wsmanager.service.IRoleMenuRelationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.insi.hd.wsmanager.service.IRoleMenuRelationService;
 import org.springframework.stereotype.Service;
 
 /**
