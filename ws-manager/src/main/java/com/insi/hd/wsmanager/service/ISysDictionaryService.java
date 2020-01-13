@@ -1,6 +1,6 @@
 package com.insi.hd.wsmanager.service;
 
-import com.insi.da.wscommon.util.JSONResult;
+import com.insi.da.wscommon.base.Result;
 import com.insi.hd.wsmanager.entity.SysDictionary;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -14,5 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISysDictionaryService extends IService<SysDictionary> {
 
-    JSONResult deleteDictionary(Long dictionaryId);
+    Result<?> deleteDictionary(Long dictionaryId);
 }

@@ -1,11 +1,11 @@
 package com.insi.hd.wsmanager.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.insi.da.wscommon.base.BaseRequest;
+import com.insi.da.wscommon.base.CodeMsg;
+import com.insi.da.wscommon.base.Result;
 import com.insi.da.wscommon.constant.Constant;
-import com.insi.da.wscommon.util.JSONResult;
 import com.insi.da.wscommon.util.StringUtil;
 import com.insi.hd.wsmanager.entity.SysUser;
 import com.insi.hd.wsmanager.mapper.SysUserMapper;
@@ -35,16 +35,16 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public JSONResult deleteSysUser(Long userId) {
+    public Result<?> deleteSysUser(Long userId) {
 
         SysUser sysUser = getById(userId);
         sysUser.setIsDeleted(Constant.SYS_ONE);
         sysUser.setModifyTime(LocalDateTime.now());
         boolean status = updateById(sysUser);
         if (status) {
-            return JSONResult.ok();
+            return Result.success();
         } else {
-            return JSONResult.errorMsg("删除失败");
+            return Result.error(CodeMsg.DATA_DELETE_ERROR);
         }
     }
 }
