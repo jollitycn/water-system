@@ -3,7 +3,10 @@ package com.insi.hd.wsmanager.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insi.da.wscommon.util.JSONResult;
+import com.insi.hd.wsmanager.entity.SysMenu;
 import com.insi.hd.wsmanager.entity.SysRole;
+import com.insi.hd.wsmanager.service.IRoleMenuRelationService;
+import com.insi.hd.wsmanager.service.ISysMenuService;
 import com.insi.hd.wsmanager.service.ISysRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -93,4 +96,6 @@ public class SysRoleController {
         List<SysRole> result = sysRoleService.list(wrapper);
         return JSONResult.ok(result);
     }
+
+
 }

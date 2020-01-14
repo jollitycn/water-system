@@ -28,15 +28,12 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public IPage<SysUser> getSysUserList(Page<SysUser> page, BaseRequest request) {
-
         String userAccount = StringUtil.addPercent(request.getSearchKey());
-
         return baseMapper.getSysUserList(page, userAccount);
     }
 
     @Override
     public Result<?> deleteSysUser(Long userId) {
-
         SysUser sysUser = getById(userId);
         sysUser.setIsDeleted(Constant.SYS_ONE);
         sysUser.setModifyTime(LocalDateTime.now());

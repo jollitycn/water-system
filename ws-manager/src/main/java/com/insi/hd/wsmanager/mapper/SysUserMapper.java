@@ -15,6 +15,5 @@ import org.apache.ibatis.annotations.Param;
  * @since 2020-01-09
  */
 public interface SysUserMapper extends BaseMapper<SysUser> {
-
     IPage<SysUser> getSysUserList(Page<SysUser> page, @Param("userAccount") String userAccount);
 }
