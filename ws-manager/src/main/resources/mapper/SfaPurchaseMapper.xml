@@ -2,4 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insi.hd.wsmanager.mapper.SfaPurchaseMapper">
 
+    <select id="getSfaPurchaseList" resultType="com.insi.hd.wsmanager.entity.SfaPurchase">
+        select *
+        from t_sfa_purchase
+        order by create_time desc
+    </select>
+
+    <select id="getSfaPurchaseDetail" resultType="com.insi.hd.wsmanager.entity.vo.SfaPurchaseDetailVO">
+        select sp.sfa_purchase_id,
+               sp.purchase_no,
+               sp.water_coupon_status,
+               sp.quantity,
+               sp.publish_status,
+               sp.dealer_id,
+               d.dealer_name,
+               sp.create_time,
+               sp.product_id,
+               sp.product_name,
+               sp.product_specs
+        from t_sfa_purchase sp
+            left join t_dealer d on sp.dealer_id = d.dealer_id
+        where sp.sfa_purchase_id = #{sfaPurchaseId}
+    </select>
+
 </mapper>

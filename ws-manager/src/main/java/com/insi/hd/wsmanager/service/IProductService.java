@@ -1,7 +1,7 @@
 package com.insi.hd.wsmanager.service;
 
-import com.insi.hd.wsmanager.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.insi.hd.wsmanager.entity.Product;
 
 /**
  * <p>

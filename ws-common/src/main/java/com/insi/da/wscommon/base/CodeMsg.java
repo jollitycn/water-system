@@ -29,6 +29,7 @@ public class CodeMsg {
     public static CodeMsg DATA_UPDATE_ERROR = new CodeMsg(500110, "数据更新失败");
     public static CodeMsg DIC_CODE_REPEAT = new CodeMsg(500111, "数据字典编码不能重复");
     public static CodeMsg DIC_DELETE_ERROR = new CodeMsg(500112, "该数据字典有子数据，无法删除");
+    public static CodeMsg DISPATCH_OVER_SIZE = new CodeMsg(500113, "分派数量不能大于订购单总数");
 
     private CodeMsg(int retCode, String message) {
         this.retCode = retCode;

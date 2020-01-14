@@ -33,7 +33,7 @@ public class ProductLogs implements Serializable {
     private Long productLogsId;
 
     @ApiModelProperty(value = "操作人ID")
-    private Long operaterId;
+    private Long operatorId;
 
     @ApiModelProperty(value = "操作时间")
     private LocalDateTime operateTime;
