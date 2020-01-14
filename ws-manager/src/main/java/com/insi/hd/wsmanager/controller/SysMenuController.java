@@ -35,17 +35,17 @@ public class SysMenuController {
     @Resource
     private ISysMenuService sysMenuService;
 
-    @GetMapping("/listByRoleId/{Id}")
+    @GetMapping("/listByRoleId/{id}")
     @ApiOperation("根据角色获取菜单列表")
-    public JSONResult listByRoleId(@PathVariable Long roleId) {
-        List<SysMenu> result = sysMenuService.listByRoleId(roleId);
+    public JSONResult listByRoleId(@PathVariable Long id) {
+        List<SysMenu> result = sysMenuService.listByRoleId(id);
         return JSONResult.ok(result);
     }
 
-    @GetMapping("/getMenuByUserId/{Id}")
+    @GetMapping("/listByUserId/{id}")
     @ApiOperation("根据账号ID获取菜单列表")
-    public JSONResult getMenuByUserId(@PathVariable Long userId) {
-        List<SysMenu> result = sysMenuService.listByUserId(userId);
+    public JSONResult listByUserId(@PathVariable Long id) {
+        List<SysMenu> result = sysMenuService.listByUserId(id);
         return JSONResult.ok(result);
     }
 }

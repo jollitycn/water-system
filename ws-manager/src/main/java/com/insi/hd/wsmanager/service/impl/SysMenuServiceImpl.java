@@ -34,7 +34,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Override
     public List<SysMenu> listByRoleId(Long roleId) {
         QueryWrapper<RoleMenuRelation> roleMenuRelationQueryWrapper = new QueryWrapper<RoleMenuRelation>();
-        roleMenuRelationQueryWrapper.eq("roleId", roleId);
+        roleMenuRelationQueryWrapper.eq("role_id", roleId);
         List<RoleMenuRelation> roleMenuRelations = roleMenuRelationMapper.selectList(roleMenuRelationQueryWrapper);
         QueryWrapper<RoleMenuRelation> menu = new QueryWrapper<RoleMenuRelation>();
         List<Long> menuIds = new ArrayList<>();
