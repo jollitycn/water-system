@@ -35,6 +35,9 @@ public class SfaPurchase implements Serializable {
     @ApiModelProperty(value = "采购单号")
     private String purchaseNo;
 
+    @ApiModelProperty(value = "发布状态（0：未发布，1：已发布）")
+    private Integer publishStatus;
+
     @ApiModelProperty(value = "状态（0：未生成，1：已生成，2：异常）")
     private Integer waterCouponStatus;
 
@@ -53,5 +56,12 @@ public class SfaPurchase implements Serializable {
     @ApiModelProperty(value = "经销商ID")
     private Long dealerId;
 
+    @ApiModelProperty(value = "商品ID")
+    private Long productId;
 
+    @ApiModelProperty(value = "商品名称")
+    private String productName;
+
+    @ApiModelProperty(value = "商品规格")
+    private String productSpecs;
 }

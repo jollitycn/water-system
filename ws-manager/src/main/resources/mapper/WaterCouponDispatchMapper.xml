@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insi.hd.wsmanager.mapper.WaterCouponDispatchMapper">
-
+    <select id="getWaterCouponDispatch" resultType="com.insi.hd.wsmanager.entity.vo.WaterCouponDispatchVO">
+        select wcd.water_coupon_dispatch_id,
+               wcd.dealer_id,
+               d.dealer_name,
+               wcd.quantity,
+               wcd.operator_id,
+               su.user_account as operatorName,
+               wcd.operate_time,
+               water_coupon_status
+        from t_water_coupon_dispatch wcd
+        left join t_dealer d on wcd.dealer_id = d.dealer_id
+        left join sys_user su on wcd.operator_id = su.user_id
+        where wcd.sfa_purchase_id = #{sfaPurchaseId}
+    </select>
 </mapper>

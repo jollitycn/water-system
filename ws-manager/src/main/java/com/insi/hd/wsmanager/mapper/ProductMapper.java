@@ -1,7 +1,7 @@
 package com.insi.hd.wsmanager.mapper;
 
-import com.insi.hd.wsmanager.entity.Product;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.insi.hd.wsmanager.entity.Product;
 
 /**
  * <p>

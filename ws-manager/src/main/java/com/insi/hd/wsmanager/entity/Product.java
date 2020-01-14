@@ -1,5 +1,6 @@
 package com.insi.hd.wsmanager.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author LiuHao
- * @since 2020-01-10
+ * @since 2020-01-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -48,7 +49,13 @@ public class Product implements Serializable {
     private Long quantity;
 
     @ApiModelProperty(value = "商品价格")
-    private Double price;
+    private BigDecimal price;
+
+    @ApiModelProperty(value = "优惠价格")
+    private BigDecimal discountPrice;
+
+    @ApiModelProperty(value = "是否启用优惠价（0：否，1：是）")
+    private Integer isDiscountPrice;
 
     @ApiModelProperty(value = "商品图片")
     private String imageUrl;

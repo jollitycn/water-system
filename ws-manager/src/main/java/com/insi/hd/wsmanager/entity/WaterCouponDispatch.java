@@ -42,7 +42,7 @@ public class WaterCouponDispatch implements Serializable {
     private Integer quantity;
 
     @ApiModelProperty(value = "操作人ID")
-    private Long operaterId;
+    private Long operatorId;
 
     @ApiModelProperty(value = "分派时间")
     private LocalDateTime operateTime;
